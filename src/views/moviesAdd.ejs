@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Movie add</title>
+    <link rel='stylesheet' href='/css/style.css' />
+</head>
+
+<body>
+    <figure>
+        <img src="/img/logo-DH.png" alt="Logo Digital House">
+      </figure>
+    <h1 class="titulo">Agregar Película</h1>
+    <br>
+    <section class="formulario">
+        <form action="/movies/create" method="POST">
+            <label for="title">Title </label>
+            <p><input type="text" name="title" id="title" value="<%= locals.old && locals.old.title? old.title : null%>" ></p>
+            <div class="error">
+                <!-- errores -->
+                  <span><%= locals.errores && locals.errores.title ? errores.title.msg : null %></span>
+            </div>
+
+            <label for="rating">Rating </label>
+            <p><input type="number" name="rating" id="rating" value="<%= locals.old && locals.old.rating ? old.rating: null%>" > </p>
+            <div class="error">
+                  <!-- errores -->
+                  <span> <%= locals.errores && locals.errores.rating ? errores.rating.msg : null%></span>
+            </div>
+
+            <label for="awards">Awards </label>
+            <p><input type="number" name="awards" id="" value="<%= locals.old && locals.old.awards ? old.awards : null%>" ></p>
+            <div class="error">
+                <!-- errores -->
+                <span> <%= locals.errores && locals.errores.awards ? errores.awards.msg : null%></span>
+          </div>
+
+            <label for="release_date">Release date </label>
+            <p><input type="date" name="release_date" id=""  value="<%= locals.old && locals.old.release_date ? old.release_date : null %> " ></p>
+            <div class="error">
+                <!-- errores -->
+                <span> <%= locals.errores && locals.errores.release_date ? errores.release_date.msg : null %></span>
+             </div>
+
+            <label for="length">Length </label>
+            <p><input type="number" name="length" id="" value="<%= locals.old && locals.old.length ? old.length : null %> " ></p>
+            <div class="error">
+                <!-- errores -->
+                <span> <%= locals.errores && locals.errores.length ? errores.length.msg : null%></span>
+          </div>
+
+            <br>
+            <p> <button class="botonAgregar" type="submit">Agregar</button>
+            
+            <a  class="botonVolver" href="/movies">Listado de Películas</a></p>
+        </form>
+    </section>
+    
+</body>
+
+</html>
